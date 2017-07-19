@@ -774,6 +774,27 @@ a.page-prev {
     }
 }
 
+
+/* Cosmetic only */
+
+#item {
+    width: 300px;
+}
+
+#item img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.easyPaginateNav a {
+    padding: 5px;
+}
+
+.easyPaginateNav a.current {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 @media only screen and (max-device-width: 992px) {
     header .header-top li {
         padding-left: 20px !important;
