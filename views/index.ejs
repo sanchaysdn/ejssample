@@ -94,12 +94,13 @@ $('.oustide').click(function(){
 function quantity(val) {
 if(val){
     var test = val;
+    $('#item').empty();
      for (var i = 1; i <= val; i++) {
-        //$newdiv = $('<div>Hello</div>').text(i);
         console.log(val)
-        //$('#item').show();
-        $('#item').append('<li style="text-align: center;"><span class="listtLi">'+ i +'</span>Item <span class="number">'+ test  +'</span></li>');
+
+        $('#item').append('<li style="text-align: center;"><span class="listtLi">'+ i +'</span>Item <span class="number"></span></li>');
       }
+     $('.easyPaginateNav').empty();
      $('#item').easyPaginate({
 	paginateElement: 'li',
 	elementsPerPage: 3,
