@@ -113,9 +113,36 @@ if(val){
    }
    
 }
+// function quantity_val(val){
+// 	//$('.number').replace('<li style="text-align: center;">Item'+ val  +'</li>');
+// 	$('.number').html(val);
+
+// }
 function quantity_val(val){
+var value = $('#quantity').val();
+$('#item').empty();
+//console.log("quantity",bla);
 	//$('.number').replace('<li style="text-align: center;">Item'+ val  +'</li>');
-	$('.number').html(val);
+	//$('.number').html(val);
+	if(value){
+    
+    $('#item').empty();
+     for (var i = 1; i <= value; i++) {
+        console.log(val)
+
+        $('#item').append('<li style="text-align: center;"><span class="listtLi">'+ i +'</span>Item <span class="number">'+ val + i +'</span></li>');
+      }
+     $('.easyPaginateNav').empty();
+     $('#item').easyPaginate({
+	paginateElement: 'li',
+	elementsPerPage: 3,
+	effect: 'climb'
+      });
+   }
+   else{
+   	$('#item').empty();
+   	$('.easyPaginateNav').empty();
+   }
 
 }
 </script>
