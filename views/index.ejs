@@ -12,9 +12,9 @@
 <script src="/javascripts/jquery.easyPaginate.js"></script>
 <script>
 $(document).ready(function(){
-    $("a.menuList").click(function(){
-    	   var $menu = $('.subMenu');
-        $(".subMenu").toggle();
+    $(".menuList").click(function(){
+    	$(".subMenu").animate({width:'toggle'},200);
+    	   $(this).toggleClass("closed");
     });
 
     $('#quantity').val('');
@@ -23,8 +23,12 @@ $(document).ready(function(){
     // })
 
 $('.oustide').click(function(){
-    console.log("abcg");
-    $(".subMenu").attr('style','display:none');
+if ($('.subMenu').css('display') == 'block'){	
+	$(".subMenu").animate({width:'toggle'},200);
+    	   $(this).toggleClass("closed");
+}
+    // console.log("abcg");
+    // $(".subMenu").attr('style','display:none');
 })
     
 });
@@ -33,7 +37,7 @@ $('.oustide').click(function(){
 <body class="home">
     <div class="container-fluid display-table">
         <div class="row display-table-row">
-            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box " id="navigation">
                 <div class="logo">
                     
                 </div>
@@ -93,6 +97,7 @@ $('.oustide').click(function(){
 <script>
 function quantity(val) {
 if(val){
+	$('#quantity').css({'border-color':'black'});
     var test = val;
     $('#item').empty();
      for (var i = 1; i <= val; i++) {
@@ -120,6 +125,9 @@ if(val){
 // }
 function quantity_val(val){
 var value = $('#quantity').val();
+if(value == ''){
+$('#quantity').css({'border-color':'red'});
+}
 $('#item').empty();
 //console.log("quantity",bla);
 	//$('.number').replace('<li style="text-align: center;">Item'+ val  +'</li>');
