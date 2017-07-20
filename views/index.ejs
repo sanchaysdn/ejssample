@@ -29,8 +29,8 @@ $(document).ready(function(){
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="javascript:void(0)" class="menuList"><i class="fa fa-server" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Option</span></a></li>
-                        <li><a href="#"><i class="fa fa-th" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Quantity</span></a>
+                        <li class="active"><a href="javascript:void(0)" class="menuList"><span class="hidden-xs hidden-sm">Option</span></a></li>
+                        <li class="active"><a href="javascript:void(0)"><span class="hidden-xs hidden-sm">Quantity</span></a>
                         <input type="number" id="quantity" onchange="quantity(this.value)" placeholder="Type here" class="inputleft">
                         </li>
                 </div>
@@ -64,18 +64,12 @@ $(document).ready(function(){
                 </div>
                 <div class="user-dashboard">
                     <div class="row">
-                       <div class="col-md-12 col-sm-12 col-xs-12 gutter">
-                         <div class="sales">
+                       <div class="col-md-12 col-sm-12 col-xs-12 gutter text-center" >
+                         <div class="sales" >
 						<ul id ="item">
 						</ul>
                          </div>
-			    	  <div class="paginate text-center" ><!-- remove width id you don't need it-->
-			         <ul class="pagination">
-			           <li><a href="#"rel="prev" class="page-prev"><span class="fa fa-angle-left"></span></a></li>
-			           <li><a href="#" rel="next" class="page-next"><span class="fa fa-angle-right"></span></a></li> 
-			         </ul>
-			         <div class="clearfix"></div>
-			        </div>
+			    	  
                        </div>
                     </div>
                 </div>
@@ -86,18 +80,25 @@ $(document).ready(function(){
 </html>
 <script>
 function quantity(val) {
-    var $newdiv;
+if(val){
     var test = val;
      for (var i = 1; i <= val; i++) {
         //$newdiv = $('<div>Hello</div>').text(i);
         console.log(val)
-        $('#item').append('<li style="text-align: center;"><span>'+ i +'</span>Item<b class="number">'+ test  +'</b></li>');
+        //$('#item').show();
+        $('#item').append('<li style="text-align: center;"><span class="listtLi">'+ i +'</span>Item <span class="number">'+ test  +'</span></li>');
       }
      $('#item').easyPaginate({
 	paginateElement: 'li',
 	elementsPerPage: 3,
 	effect: 'climb'
-});
+      });
+   }
+   else{
+   	$('#item').empty();
+   	$('.easyPaginateNav').empty();
+   }
+   
 }
 function quantity_val(val){
 	//$('.number').replace('<li style="text-align: center;">Item'+ val  +'</li>');

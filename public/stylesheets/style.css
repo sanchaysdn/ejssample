@@ -17,9 +17,9 @@ a {
 
 li,
 ul {
-    list-style: none;
+    list-style: outside none none;
+    margin: 44px 0 0;
     padding: 0;
-    margin: 0;
 }
 
 .header-top i {
@@ -193,11 +193,11 @@ ul {
 /*Home Page*/
 
 .home {
-    background: #f6f7fa;
+    background: #e7e6e6;
 }
 
 #navigation {
-    background: #0e1a35;
+    background: #BFBFBF;
 }
 
 #navigation {
@@ -375,15 +375,26 @@ header {
     text-align: center;
 }
 
-.navi a {
-    border-bottom: 1px solid #0d172e;
-    border-top: 1px solid #0d172e;
+.navi li {
+    border-bottom: 1px solid #040404;
+    border-top: 1px solid #040404;
     color: #ffffff;
     display: block;
     font-size: 17px;
     font-weight: 500;
     padding: 28px 20px;
     text-decoration: none;
+    background: #AFABAB;
+    text-align: center;
+    min-height: 80px;
+}
+
+.navi a {
+    color: #ffffff;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    /text-decoration: none;
 }
 
 .navi i {
@@ -392,16 +403,13 @@ header {
 }
 
 .navi .active a {
-    background: #122143;
-    border-left: 5px solid #5584ff;
-    padding-left: 15px;
+    background: #afabab none repeat scroll 0 0;
+    color: #000;
 }
 
 .navi a:hover {
-    background: #122143 none repeat scroll 0 0;
-    border-left: 5px solid #5584ff;
+    background: #AFABAB none repeat scroll 0 0;
     display: block;
-    padding-left: 15px;
 }
 
 .navbar-default {
@@ -453,24 +461,27 @@ header {
 }
 
 .sales ul li {
-    background: #ffffff none repeat scroll 0 0;
-    border: 1px solid #d4d9e3;
+    background: #afabab none repeat scroll 0 0;
+    border: 1px solid #040404;
+    color: #000;
     display: inline-block;
-    padding: 15px;
-    width: 100%;
-    color: #8492af;
     float: left;
     font-size: 20px;
-    font-weight: 600;
-    margin: 0 0 20px 0;
+    font-weight: normal;
+    margin: 0 0 20px;
+    padding: 15px;
+    width: 100%;
 }
 
-.sales ul li span {
-    border: 1px solid #cccccc;
+.sales ul li span.listtLi {
+    background: #d0cece none repeat scroll 0 0;
+    border: 1px solid #929292;
     border-radius: 100%;
-    display: inline-block;
+    color: #333;
+    float: left;
+    font-weight: normal;
     height: 40px;
-    line-height: 38px;
+    line-height: 40px;
     margin-right: 20px;
     text-align: center;
     width: 40px;
@@ -641,22 +652,24 @@ header {
 /*css add*/
 
 .inputleft {
-    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
-    border: 1px solid #0635b0;
-    border-radius: 4px;
-    color: #3968a3;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #040404;
+    border-radius: 0;
+    color: #040404;
     display: block;
     font-size: 16px;
     margin: 0 auto;
-    padding: 7px;
+    padding: 3px 10px;
     width: 80%;
 }
 
 .subMenu {
-    background: #122143 none repeat scroll 0 0;
+    background: #afabab none repeat scroll 0 0;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
     color: #ffffff;
     height: 100vh;
-    left: 220px;
+    left: 215px;
     padding: 20px;
     position: absolute;
     top: 0;
@@ -677,6 +690,11 @@ a.page-next,
 a.page-prev {
     background-color: #1478B8;
     color: #FFF;
+}
+
+.easyPaginateNav a {
+    color: #000;
+    font-size: 30px;
 }
 
 @media only screen and (max-device-width: 767px) {
@@ -776,10 +794,6 @@ a.page-prev {
 
 
 /* Cosmetic only */
-
-#item {
-    width: 300px;
-}
 
 #item img {
     display: block;
